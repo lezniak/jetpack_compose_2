@@ -4,27 +4,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.myapplication.R
+import com.example.myapplication.model.Workout
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -34,12 +25,26 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    WorkoutCard(Modifier.padding(innerPadding),
-                        R.drawable.workout1,
-                        R.string.gym_workout
-                    )
+                    YourBodySegment(Modifier.padding(innerPadding))
                 }
             }
         }
     }
+}
+
+@Composable
+private fun YourBodySegment(modifier: Modifier = Modifier){
+    val list = listOf<Workout>(Workout(R.string.gym_workout,R.drawable.workout1),Workout(R.string.yoga_workout,R.drawable.w1),Workout(R.string.fast_yoga_workout,R.drawable.w2),Workout(R.string.tabata_workout,R.drawable.w3),Workout(R.string.quick_yoga_workout,R.drawable.w4))
+    LazyRow(modifier = modifier,
+        horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        items(items = list){ item ->
+            WorkoutCard(drawable = item.image, text = item.name, modifier = Modifier)
+        }
+    }
+}
+
+@Composable
+@Preview
+private fun YourBodyPreview(){
+    YourBodySegment()
 }

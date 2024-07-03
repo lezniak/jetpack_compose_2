@@ -2,4 +2,8 @@
     <string name="app_name">My Application</string>
     <string name="search">Search</string>
     <string name="gym_workout">Gym</string>
+    <string name="yoga_workout">Yoga</string>
+    <string name="tabata_workout">Tabata</string>
+    <string name="quick_yoga_workout">Quick Yoga</string>
+    <string name="fast_yoga_workout">Fast Yoga</string>
 </resources>

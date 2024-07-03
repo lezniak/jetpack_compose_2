@@ -48,7 +48,7 @@ private fun WorkoutCardPreview(){
 }
 
 @Composable
-private fun FavouriteCard(modifier: Modifier, @DrawableRes drawable: Int, @StringRes text: Int){
+fun FavouriteCard(modifier: Modifier, @DrawableRes drawable: Int, @StringRes text: Int){
     Surface(modifier = modifier,
         shape = RoundedCornerShape(20.dp),
         color = MaterialTheme.colorScheme.surface) {
