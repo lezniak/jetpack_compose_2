@@ -32,7 +32,7 @@ import com.example.myapplication.R
 @Composable
 fun WorkoutCard(modifier: Modifier, @DrawableRes drawable : Int, @StringRes text : Int){
     val painter = rememberImagePainter(data = drawable)
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier) {
         Image(painter = painter,
             contentDescription = "workout_image",
             contentScale = ContentScale.Crop,
@@ -54,7 +54,7 @@ fun FavouriteCard(modifier: Modifier = Modifier , @DrawableRes drawable: Int, @S
     val painter = rememberImagePainter(data = drawable)
     Surface(modifier = modifier,
         shape = RoundedCornerShape(20.dp),
-        color = MaterialTheme.colorScheme.surface) {
+        color = MaterialTheme.colorScheme.primary) {
         Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.width(255.dp)) {
             Image(painter = painter,
                 contentDescription = "workout_image",

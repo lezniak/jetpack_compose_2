@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import com.example.myapplication.R
 
 @Composable
-fun SearchBar(modifier: Modifier) {
+fun SearchBar(modifier: Modifier = Modifier) {
     TextField(value = "", 
         onValueChange = {}, 
         modifier = modifier

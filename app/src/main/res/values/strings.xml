@@ -10,4 +10,8 @@
     <string name="rainy_weather">Rainy</string>
     <string name="cloudy_weather">Cloudy</string>
     <string name="night_weather">Night</string>
+    <string name="align_body">Align your Body</string>
+    <string name="favourite">Favourite Collections</string>
+    <string name="bottom_navigation_home">Home\n</string>
+    <string name="bottom_navigation_profile">Profile</string>
 </resources>
