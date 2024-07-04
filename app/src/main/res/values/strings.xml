@@ -6,4 +6,8 @@
     <string name="tabata_workout">Tabata</string>
     <string name="quick_yoga_workout">Quick Yoga</string>
     <string name="fast_yoga_workout">Fast Yoga</string>
+    <string name="sunny_weather">Sunny</string>
+    <string name="rainy_weather">Rainy</string>
+    <string name="cloudy_weather">Cloudy</string>
+    <string name="night_weather">Night</string>
 </resources>
