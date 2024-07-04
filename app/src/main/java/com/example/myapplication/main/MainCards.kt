@@ -26,12 +26,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.rememberImagePainter
 import com.example.myapplication.R
 
 @Composable
 fun WorkoutCard(modifier: Modifier, @DrawableRes drawable : Int, @StringRes text : Int){
+    val painter = rememberImagePainter(data = drawable)
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Image(painter = painterResource(id = drawable),
+        Image(painter = painter,
             contentDescription = "workout_image",
             contentScale = ContentScale.Crop,
             modifier = Modifier
@@ -49,11 +51,12 @@ private fun WorkoutCardPreview(){
 
 @Composable
 fun FavouriteCard(modifier: Modifier = Modifier , @DrawableRes drawable: Int, @StringRes text: Int){
+    val painter = rememberImagePainter(data = drawable)
     Surface(modifier = modifier,
         shape = RoundedCornerShape(20.dp),
         color = MaterialTheme.colorScheme.surface) {
         Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.width(255.dp)) {
-            Image(painter = painterResource(id = drawable),
+            Image(painter = painter,
                 contentDescription = "workout_image",
                 contentScale = ContentScale.Crop,
                 modifier = modifier
